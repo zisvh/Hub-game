@@ -6,6 +6,7 @@
 */
 
 #include "../include/my.h"
+#include "my_runner.h"
 
 void portal1(all_t *all)
 {
@@ -30,7 +31,7 @@ void portal3(all_t *all)
     if (sfKeyboard_isKeyPressed(sfKeyE) && all->knight->x >= 454
     && all->knight->x <= 490 && all->knight->y >= 5312
     && all->knight->y <= 5330 && all->knight->dir == 1) {
-        printf("portal 3 opened!");
+        game_start(0, "src/runner/map1", all->utils->window);
     }
 }
 
