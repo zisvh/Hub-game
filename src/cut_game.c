@@ -53,25 +53,25 @@ void init_cut(all_t *data)
 
 void display_cut_game(all_t *data)
 {
-    sfRenderWindow_clear(data->window, sfGreen);
-    sfRenderWindow_drawSprite(data->window, data->cut->background, NULL);
+    sfRenderWindow_clear(data->utils->window, sfGreen);
+    sfRenderWindow_drawSprite(data->utils->window, data->cut->background, NULL);
     if (data->cut->status_b == 1)
-        sfRenderWindow_drawSprite(data->window, data->cut->cut_b, NULL);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cut_b, NULL);
     else
-        sfRenderWindow_drawSprite(data->window, data->cut->cable_b, NULL);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cable_b, NULL);
     if (data->cut->status_p == 1)
-        sfRenderWindow_drawSprite(data->window, data->cut->cut_p, NULL);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cut_p, NULL);
     else
-        sfRenderWindow_drawSprite(data->window, data->cut->cable_p, NULL);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cable_p, NULL);
     if (data->cut->status_r == 1)
-        sfRenderWindow_drawSprite(data->window, data->cut->cut_r, NULL);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cut_r, NULL);
     else
-        sfRenderWindow_drawSprite(data->window, data->cut->cable_r, NULL);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cable_r, NULL);
     if (data->cut->status_y == 1)
-        sfRenderWindow_drawSprite(data->window, data->cut->cut_y, NULL);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cut_y, NULL);
     else
-        sfRenderWindow_drawSprite(data->window, data->cut->cable_y, NULL);
-    sfRenderWindow_display(data->window);
+        sfRenderWindow_drawSprite(data->utils->window, data->cut->cable_y, NULL);
+    sfRenderWindow_display(data->utils->window);
 }
 
 void event_mouse_cut(all_t *data, cut_struct_t *cut)
@@ -96,14 +96,13 @@ void event_mouse_cut(all_t *data, cut_struct_t *cut)
     }
 }
 
-void game_cut(all_t *data)
-{
+void game_cut(all_t *data) {
     init_cut(data);
     while (sfRenderWindow_isOpen(data->utils->window)) {
         sfRenderWindow_display(data->utils->window);
-        while (sfRenderWindow_pollEvent(data->utils->window, &data->cut->event)) {
-
-            write(1 , "cut\n", 4);
+        while (sfRenderWindow_pollEvent(data->utils->window,
+                                        &data->utils->event)) {
+            event_mouse_cut(data, data->cut);
         }
         display_cut_game(data);
     }
