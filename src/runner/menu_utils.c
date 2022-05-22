@@ -30,7 +30,7 @@ void menu_down(data_t *data)
 void set_play(data_t *data)
 {
     if (data->won == 1) {
-        // ! PASSER A LA SUITE (REVENIR AU JEU PRINCIPAL)
+        return;
     }
     set_moving_background_2(data);
     set_move(data, 2, (sfVector2f){-12.0, 0.0});
