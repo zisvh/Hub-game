@@ -75,6 +75,7 @@
     void declare_knight2(all_t *all);
     list_t *init_mob(all_t *all);
     list_t *display_mob(list_t *list, all_t *all);
+    void game_cut(all_t *data);
     void display_cut_game(all_t *data);
 
 #endif

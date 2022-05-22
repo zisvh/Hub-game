@@ -23,6 +23,7 @@ void switch_scene(all_t *all)
         case 4: make_select(all);
             break;
         case 5: make_game(all);
+            break;
         default:
             break;
     }

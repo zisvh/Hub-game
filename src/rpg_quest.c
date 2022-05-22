@@ -21,7 +21,7 @@ void portal2(all_t *all)
     if (sfKeyboard_isKeyPressed(sfKeyE) && all->knight->x >= 384
     && all->knight->x <= 426 && all->knight->y >= 5312
     && all->knight->y <= 5330 && all->knight->dir == 1) {
-        printf("portal 2 opened!");
+        game_cut(all);
     }
 }
 

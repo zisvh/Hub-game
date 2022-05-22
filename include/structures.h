@@ -320,9 +320,41 @@
     } hunter_t;
 
 
-    typedef struct {
+typedef struct cut_struct_s {
+    int status_b;
+    int status_p;
+    int status_r;
+    int status_y;
+    int life_b;
+    int life_p;
+    int life_r;
+    int life_y;
+    sfSprite *background;
+    sfTexture *background_texture;
+    sfSprite *cable_b;
+    sfTexture *cable_b_texture;
+    sfSprite *cable_p;
+    sfTexture *cable_p_texture;
+    sfSprite *cable_r;
+    sfTexture *cable_r_texture;
+    sfSprite *cable_y;
+    sfTexture *cable_y_texture;
+    sfSprite *cut_b;
+    sfTexture *cut_b_texture;
+    sfSprite *cut_p;
+    sfTexture *cut_p_texture;
+    sfSprite *cut_r;
+    sfTexture *cut_r_texture;
+    sfSprite *cut_y;
+    sfTexture *cut_y_texture;
+    sfVector2f pos;
+    sfEvent event;
+}cut_struct_t;
+
+typedef struct {
         inventory_t *inventory;
         knight_t *knight;
+        cut_struct_t *cut;
         quest_t *quest;
         sky_t *sky;
         select_t *select;
@@ -340,8 +372,8 @@
         int count;
         int i;
         list_t *list;
-
-    } all_t;
+    sfRenderWindow *window;
+} all_t;
 
 void base_hunter(all_t *all);
 
