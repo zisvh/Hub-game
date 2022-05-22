@@ -31,7 +31,7 @@ void portal3(all_t *all)
     if (sfKeyboard_isKeyPressed(sfKeyE) && all->knight->x >= 454
     && all->knight->x <= 490 && all->knight->y >= 5312
     && all->knight->y <= 5330 && all->knight->dir == 1) {
-        game_start(0, "src/runner/map1", all->window);
+        game_start(0, "src/runner/map1", all->utils->window);
     }
 }
 
