@@ -5,6 +5,42 @@
 ** structures
 */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <math.h>
+#include <time.h>
+#include <string.h>
+#include <stddef.h>
+#include <limits.h>
+#include <dirent.h>
+#include <SFML/Network.h>
+#include <SFML/Graphics.h>
+#include <SFML/Audio.h>
+#include <SFML/System.h>
+#include <SFML/Graphics/Text.h>
+#include <SFML/Graphics/Types.h>
+#include <SFML/Audio/SoundBuffer.h>
+#include <SFML/Audio/Sound.h>
+#include <SFML/Window/Export.h>
+#include <SFML/Window/Types.h>
+#include <SFML/Graphics/Color.h>
+#include <SFML/Graphics/Rect.h>
+#include <SFML/Graphics/Transform.h>
+#include <SFML/System/Vector2.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <math.h>
+#include <time.h>
+#include <string.h>
+#include <stddef.h>
+#include <limits.h>
+#include <dirent.h>
+
 #ifndef STRUCTURES_H_
     #define STRUCTURES_H_
 
@@ -212,6 +248,78 @@
         sfIntRect rect;
     } list_t;
 
+        typedef struct hunter {
+        sfVideoMode mode;
+        sfRenderWindow *window;
+        unsigned char ui;
+        sfEvent event;
+        sfSprite *spritesplayer;
+        sfTexture *textureplayer;
+        sfSprite *sp_sky;
+        sfSprite *sp_sky2;
+        sfSprite *sp_sky3;
+        sfSprite *sp_ground;
+        sfSprite *sp_ground2;
+        sfSprite *sp_ground3;
+        sfSprite *sp_midlle;
+        sfSprite *sp_midlle2;
+        sfSprite *sp_midlle3;
+        sfSprite *sp_second_ground;
+        sfSprite *sp_second_ground2;
+        sfSprite *sp_second_ground3;
+        sfSprite *sp_foreground;
+        sfSprite *sp_foreground2;
+        sfSprite *sp_foreground3;
+        sfSprite *sp_bg;
+        sfSprite *sp_bg2;
+        sfSprite *sp_bg3;
+        sfTexture *tex_sky;
+        sfTexture *tex_foreground;
+        sfTexture *tex_midlle;
+        sfTexture *tex_bg;
+        sfTexture *tex_ground;
+        sfTexture *tex_second_grnd;
+        sfSprite *player;
+        sfTexture *texture_player;
+        sfIntRect rect;
+        sfTime time;
+        sfSprite *sprite_life;
+        sfSprite *sprite;
+        sfSprite *sprite2;
+        sfVector2f vector_sprite;
+        sfClock *clock;
+        sfTexture *texture_duck;
+        int count2;
+        sfTexture *texture_life;
+        float seconds;
+        sfVideoMode video_mode;
+        sfSoundBuffer *soundbufferbird;
+        sfSound *soundbird;
+        sfSoundBuffer *soundbufferfinal;
+        sfSound *soundfinal;
+        sfTexture *background;
+        sfIntRect rect_life;
+        sfVector2f vect_sprite;
+        int score;
+        sfVector2f varspeed;
+        sfTexture *game_over;
+        sfSprite *sprite4;
+        sfFont *font;
+        sfText *text;
+        sfClock *clockcombo;
+        sfText *textmeme;
+        sfTime timecombo;
+        float secondcombo;
+
+        sfSprite *sp_combo;
+        sfTexture *tex_combo1;
+        sfTexture *tex_combo2;
+        sfTexture *tex_combo3;
+        sfTexture *tex_combo4;
+        sfTexture *tex_combo5;
+    } hunter_t;
+
+
     typedef struct {
         inventory_t *inventory;
         knight_t *knight;
@@ -220,6 +328,7 @@
         select_t *select;
         map_t *map;
         utils_t *utils;
+        hunter_t *hunter;
         intro_t *intro;
         menu_t *menu;
         settings_t *settings;
@@ -233,6 +342,8 @@
         list_t *list;
 
     } all_t;
+
+void base_hunter(all_t *all);
 
 
 #endif

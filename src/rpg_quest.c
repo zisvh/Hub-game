@@ -12,7 +12,7 @@ void portal1(all_t *all)
     if (sfKeyboard_isKeyPressed(sfKeyE) && all->knight->x >= 320
     && all->knight->x <= 358 && all->knight->y >= 5312
     && all->knight->y <= 5330 && all->knight->dir == 1) {
-        printf("portal 1 opened!");
+        base_hunter(all);
     }
 }
 
