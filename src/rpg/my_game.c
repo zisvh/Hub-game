@@ -5,7 +5,7 @@
 ** my_game
 */
 
-#include "../include/my.h"
+#include "../../include/my.h"
 
 void switch_scene(all_t *all)
 {
@@ -23,6 +23,9 @@ void switch_scene(all_t *all)
         case 4: make_select(all);
             break;
         case 5: make_game(all);
+            break;
+        case 6 :
+            puzzle(all);
             break;
         default:
             break;

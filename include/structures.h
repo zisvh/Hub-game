@@ -365,6 +365,7 @@ typedef struct {
         menu_t *menu;
         settings_t *settings;
         lb_t *lb;
+        sfEvent event;
         game_t *game;
         pause_t *pause;
         t_t *t;
@@ -372,7 +373,7 @@ typedef struct {
         int count;
         int i;
         list_t *list;
-    sfRenderWindow *window;
+        sfRenderWindow *window;
 } all_t;
 
 void base_hunter(all_t *all);

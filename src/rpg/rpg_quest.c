@@ -5,7 +5,7 @@
 ** rpg_quest
 */
 
-#include "../include/my.h"
+#include "../../include/my.h"
 #include "my_runner.h"
 
 void portal1(all_t *all)
@@ -50,6 +50,7 @@ void portal5(all_t *all)
     && all->knight->x <= 626 && all->knight->y >= 5312
     && all->knight->y <= 5330 && all->knight->dir == 1) {
         printf("portal 5 opened!");
+        all->i = 6;
     }
 }
 

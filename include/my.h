@@ -35,5 +35,6 @@
     #include "lib.h"
     #include "structures.h"
     #include "fonctions.h"
+    #include "puzzle.h"
 
 #endif

@@ -17,7 +17,6 @@ list_t *display_mob(list_t *list, all_t *all)
     int x_m;
     int y_m;
     list_t *ptr= list;
-    printf("%d %d\n", x, y);
 
     while (ptr != NULL) {
         x_m = ptr->x * 64;
